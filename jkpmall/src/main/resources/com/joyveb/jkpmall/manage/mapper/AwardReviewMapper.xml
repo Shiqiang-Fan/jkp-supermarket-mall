@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joyveb.jkpmall.manage.mapper.AwardReviewMapper">
+    <resultMap id="awardReviewMap" type="com.joyveb.jkpmall.manage.bean.AwardReviewBean">
+        <id column="ID" property="id"/>
+        <result column="CASH_ID" property="cashId"/>
+        <result column="OPEN_ID" property="openId"/>
+        <result column="TICKET_NUM" property="ticketNum"/>
+        <result column="GAME_CODE" property="gameCode"/>
+        <result column="GAME_NAME" property="gameName"/>
+        <result column="PRIZE_AMOUNT" property="prizeAmount"/>
+        <result column="CASH_TIME" property="cashTime"/>
+        <result column="AUDIT_STATUS" property="auditStatus"/>
+        <result column="AUDIT_TIME" property="auditTime"/>
+        <result column="NAME" property="name"/>
+        <result column="TELEPHONE" property="mobile"/>
+        <result column="ID_CARD" property="idCard"/>
+        <result column="BANK_CARD_NUMBER" property="bankCardNumber"/>
+        <result column="BANK_CARD_PROVINCE" property="bankCardProvince"/>
+        <result column="ACCOUNT_OPENING_BANK" property="accountOpeningBank"/>
+        <result column="FACADE_OF_ID_CARD" property="facadeOfIdCard"/>
+        <result column="OPPOSITE_OF_ID_CARD" property="oppositeOfIdCard"/>
+        <result column="WINNING_LOTTERY_TICKET" property="winningLotteryTicket"/>
+    </resultMap>
+
+    <sql id="columns">
+        ID, CASH_ID, OPEN_ID, TICKET_NUM, GAME_CODE, GAME_NAME, PRIZE_AMOUNT, CASH_TIME,
+        AUDIT_STATUS,
+        AUDIT_TIME, NAME, TELEPHONE, ID_CARD, BANK_CARD_NUMBER, BANK_CARD_PROVINCE,
+        ACCOUNT_OPENING_BANK,
+        FACADE_OF_ID_CARD, OPPOSITE_OF_ID_CARD, WINNING_LOTTERY_TICKET
+    </sql>
+
+    <select id="getAwardInfo" resultMap="awardReviewMap">
+        SELECT
+        <include refid="columns"/>
+        FROM T_TOP_PRICE_AUDIT WHERE AUDIT_STATUS = 1
+    </select>
+
+    <update id="updateAuditStatus" parameterType="com.joyveb.jkpmall.manage.bean.AwardReviewBean">
+        UPDATE T_TOP_PRICE_AUDIT
+        <set>
+            AUDIT_STATUS = #{auditStatus},
+            <if test="auditTime != null and auditTime != ''">
+                AUDIT_TIME = #{auditTime},
+            </if>
+            <if test="name != null and name != ''">
+                NAME = #{name},
+            </if>
+            <if test="mobile != null and mobile != ''">
+                TELEPHONE = #{mobile},
+            </if>
+            <if test="idCard != null and idCard != ''">
+                ID_CARD = #{idCard},
+            </if>
+            <if test="bankCardNumber != null and bankCardNumber != ''">
+                BANK_CARD_NUMBER = #{bankCardNumber},
+            </if>
+            <if test="bankCardProvince != null and bankCardProvince != ''">
+                BANK_CARD_PROVINCE = #{bankCardProvince},
+            </if>
+            <if test="accountOpeningBank != null and accountOpeningBank != ''">
+                ACCOUNT_OPENING_BANK = #{accountOpeningBank},
+            </if>
+            <if test="facadeOfIdCard != null and facadeOfIdCard != ''">
+                FACADE_OF_ID_CARD = #{facadeOfIdCard},
+            </if>
+            <if test="oppositeOfIdCard != null and oppositeOfIdCard != ''">
+                OPPOSITE_OF_ID_CARD = #{oppositeOfIdCard},
+            </if>
+            <if test="winningLotteryTicket != null and winningLotteryTicket != ''">
+                WINNING_LOTTERY_TICKET = #{winningLotteryTicket},
+            </if>
+        </set>
+        WHERE ID = #{id}
+    </update>
+
+</mapper>

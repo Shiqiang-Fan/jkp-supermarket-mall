@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.joyveb:logback-kafka-appender:0.0.3-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://E:/gradle-4.6/caches/modules-2/files-2.1/com.joyveb/logback-kafka-appender/0.0.3-SNAPSHOT/674bbdf71117244f22c26f04eb8421fffa7c4f83/logback-kafka-appender-0.0.3-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://E:/gradle-4.6/caches/modules-2/files-2.1/com.joyveb/logback-kafka-appender/0.0.3-SNAPSHOT/d699e691e81562bcbf64d1fca069b245354edceb/logback-kafka-appender-0.0.3-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

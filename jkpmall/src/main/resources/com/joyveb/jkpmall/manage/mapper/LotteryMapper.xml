@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joyveb.jkpmall.manage.mapper.LotteryMapper">
+    <resultMap id="ResultMap" type="com.joyveb.jkpmall.manage.bean.CoreProduct">
+
+        <id column="GAME_CODE" property="gameCode" jdbcType="VARCHAR"/>
+        <result column="GAME_NAME" property="gameName" jdbcType="VARCHAR"/>
+        <result column="PAPER_NUM" property="paperNum" jdbcType="INTEGER"/>
+        <result column="PRIZE_AMOUNT" property="prizeAmount" jdbcType="INTEGER"/>
+        <result column="PICTURE_PATH" property="picturePath" jdbcType="VARCHAR"/>
+        <result column="STORE_NUM" property="storeNum" jdbcType="INTEGER"/>
+        <result column="DETAIL" property="detail" jdbcType="VARCHAR"/>
+        <result column="PARAMETER" property="parameter" jdbcType="VARCHAR"/>
+        <result column="SERVICE" property="service" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+    <select id="getProducts" parameterType="map" resultMap="ResultMap">
+        select GAME_CODE,GAME_NAME,PAPER_NUM,PRIZE_AMOUNT,PICTURE_PATH,STORE_NUM,DETAIL,PARAMETER,SERVICE from t_core_product
+        <where>
+            1=1
+            <if test="gameCode != null">
+                and GAME_CODE= #{gameCode}
+            </if>
+            <if test="gameName != null">
+                and GAME_NAME = #{gameName}
+            </if>
+            <if test="paperNum != null">
+                and PAPER_NUM = #{paperNum}
+            </if>
+            <if test="prizeAmount != null">
+                and PRIZE_AMOUNT = #{prizeAmount}
+            </if>
+            <if test="picturePath != null">
+                and PICTURE_PATH = #{picturePath}
+            </if>
+            <if test="storeNum != null">
+                and STORE_NUM = #{storeNum}
+            </if>
+            <if test="detail != null">
+                and DETAIL = #{detail}
+            </if>
+            <if test="parameter != null">
+                and PARAMETER = #{parameter}
+            </if>
+            <if test="service != null">
+                and SERVICE = #{service}
+            </if>
+
+            LIMIT #{index},#{limit}
+        </where>
+    </select>
+
+    <select id="getProduct" parameterType="string" resultMap="ResultMap">
+        select GAME_CODE,GAME_NAME,PAPER_NUM,PRIZE_AMOUNT,PICTURE_PATH,STORE_NUM,DETAIL,PARAMETER,SERVICE from t_core_product
+            where GAME_CODE = #{gameCode}
+    </select>
+
+    <select id="countCoreProduct" parameterType="map" resultType="int">
+        select count(1) from t_core_product
+        where 1=1
+        <if test="gameCode != null">
+            and GAME_CODE= #{gameCode}
+        </if>
+        <if test="gameName != null">
+            and GAME_NAME = #{gameName}
+        </if>
+        <if test="paperNum != null">
+            and PAPER_NUM = #{paperNum}
+        </if>
+        <if test="prizeAmount">
+            and PRIZE_AMOUNT = #{prizeAmount}
+        </if>
+        <if test="picturePath">
+            and PICTURE_PATH = #{picturePath}
+        </if>
+        <if test="storeNum">
+            and STORE_NUM = #{storeNum}
+        </if>
+        <if test="detail != null">
+            and DETAIL = #{detail}
+        </if>
+        <if test="parameter != null">
+            and PARAMETER = #{parameter}
+        </if>
+        <if test="service != null">
+            and SERVICE = #{service}
+        </if>
+
+    </select>
+    
+    <insert id="insertProduct" parameterType="com.joyveb.jkpmall.manage.bean.CoreProduct">
+        insert into t_core_product (GAME_CODE,
+                                    GAME_NAME,
+                                    PAPER_NUM,
+                                    PRIZE_AMOUNT,
+                                    PICTURE_PATH,
+                                    STORE_NUM,
+                                    DETAIL,
+                                    PARAMETER,
+                                    SERVICE)
+              values (#{gameCode},
+                      #{gameName},
+                      #{paperNum},
+                      #{prizeAmount},
+                      #{picturePath},
+                      #{storeNum},
+                      #{detail},
+                      #{parameter},
+                      #{service})
+    </insert>
+
+    <update id="updateProduct" parameterType="com.joyveb.jkpmall.manage.bean.CoreProduct">
+
+        update t_core_product set
+            GAME_NAME = #{gameName},
+            PAPER_NUM = #{paperNum},
+            PRIZE_AMOUNT = #{prizeAmount},
+            PICTURE_PATH = #{picturePath},
+            STORE_NUM = #{storeNum},
+            DETAIL = #{detail},
+            PARAMETER = #{parameter},
+            SERVICE = #{service}
+          where GAME_CODE = #{gameCode}
+    </update>
+
+    <delete id="deleteProduct" parameterType="string">
+        delete from t_core_product
+                  where GAME_CODE = #{gameCode}
+    </delete>
+
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.joyveb.jkpmall.iml" filepath="$PROJECT_DIR$/.idea/modules/com.joyveb.jkpmall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.joyveb.jkpmall.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.joyveb.jkpmall.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.joyveb.jkpmall.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.joyveb.jkpmall.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.joyveb.redeem.iml" filepath="$PROJECT_DIR$/.idea/modules/com.joyveb.redeem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../redeem_jkp/.idea/modules/com.joyveb.redeem.iml" filepath="$PROJECT_DIR$/../redeem_jkp/.idea/modules/com.joyveb.redeem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.joyveb.redeem.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.joyveb.redeem.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../redeem_jkp/.idea/modules/com.joyveb.redeem.main.iml" filepath="$PROJECT_DIR$/../redeem_jkp/.idea/modules/com.joyveb.redeem.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../redeem_jkp/.idea/modules/com.joyveb.redeem.test.iml" filepath="$PROJECT_DIR$/../redeem_jkp/.idea/modules/com.joyveb.redeem.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.joyveb.redeem.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.joyveb.redeem.test.iml" />
+    </modules>
+  </component>
+</project>

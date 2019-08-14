@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joyveb.jkpmall.manage.mapper.CoreRecordMapper">
+    <resultMap id="ResultMap" type="com.joyveb.jkpmall.manage.bean.CoreRecord">
+        <id column="UUID" property="uuid"/>
+        <result column="GAME_CODE" property="gameCode"/>
+        <result column="SALE_NUM" property="saleNum"/>
+        <result column="TELEPHONE" property="telephone"/>
+        <result column="USER_NAME" property="userName"/>
+        <result column="ADDRESS" property="address"/>
+        <result column="LOGISTICS" property="logistics"/>
+        <result column="LOGISTICS_NUM" property="logisticsNum"/>
+        <result column="OPENID" property="openid"/>
+        <result column="AMOUNT" property="amount"/>
+        <result column="STATUS" property="status"/>
+        <result column="DATETIME" property="dateTime"/>
+
+
+    </resultMap>
+
+    <insert id="insertOrder" parameterType="com.joyveb.jkpmall.manage.bean.CoreRecord">
+        insert into t_core_record (UUID,GAME_CODE,SALE_NUM,TELEPHONE,USER_NAME,ADDRESS,
+        OPENID,AMOUNT,STATUS,DATETIME) values (#{uuid},#{gameCode},#{saleNum},
+        #{telephone},#{userName},#{address},#{openid},#{amount},#{status},#{dateTime})
+    </insert>
+
+    <select id="selectRecord" parameterType="map" resultMap="ResultMap">
+        select UUID,GAME_CODE,SALE_NUM,TELEPHONE,USER_NAME,ADDRESS,LOGISTICS,LOGISTICS_NUM,OPENID,AMOUNT,STATUS,DATETIME from t_core_record
+        <where>
+            1=1
+            <if test="uuid != null">
+                and UUID = #{uuid}
+            </if>
+            <if test="username != null">
+                and USER_NAME = #{username}
+            </if>
+            <if test="logisticsNum != null">
+                and LOGISTICS_NUM = #{logisticsNum}
+            </if>
+            <if test=" gameCode != null">
+                and  GAME_CODE = #{gameCode}
+            </if>
+            <if test=" saleNum != null">
+                and  SALE_NUM = #{saleNum}
+            </if>
+            <if test=" telephone != null">
+                and  TELEPHONE = #{telephone}
+            </if>
+            <if test=" address != null">
+                and  ADDRESS = #{address}
+            </if>
+            <if test=" logisticsNum != null">
+                and  LOGISTICS = #{logisticsNum}
+            </if>
+            <if test=" openid != null">
+                and  OPENID = #{openid}
+            </if>
+            <if test=" amount != null">
+                and  AMOUNT = #{amount}
+            </if>
+            <if test=" status != null">
+                and  STATUS = #{status}
+            </if>
+            <if test=" dateTime != null">
+                and  DATETIME = #{dateTime}
+            </if>
+
+            limit #{index},#{limit}
+        </where>
+    </select>
+
+    <select id="countCoreRecord" parameterType="map" resultType="int">
+        select count(1) from t_core_record
+        <where>
+            1=1
+            <if test="uuid != null">
+                and UUID = #{uuid}
+            </if>
+            <if test="username != null">
+                and USER_NAME = #{username}
+            </if>
+            <if test="logisticsNum != null">
+                and LOGISTICS_NUM = #{logisticsNum}
+            </if>
+            <if test=" gameCode != null">
+                and  GAME_CODE = #{gameCode}
+            </if>
+            <if test=" saleNum != null">
+                and  SALE_NUM = #{saleNum}
+            </if>
+            <if test=" telephone != null">
+                and  TELEPHONE = #{telephone}
+            </if>
+            <if test=" address != null">
+                and  ADDRESS = #{address}
+            </if>
+            <if test=" logisticsNum != null">
+                and  LOGISTICS = #{logisticsNum}
+            </if>
+            <if test=" openid != null">
+                and  OPENID = #{openid}
+            </if>
+            <if test=" amount != null">
+                and  AMOUNT = #{amount}
+            </if>
+            <if test="status != null">
+                and  STATUS = #{status}
+            </if>
+            <if test=" dateTime != null">
+                and  DATETIME= #{dateTime}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateRecord" parameterType="com.joyveb.jkpmall.manage.bean.CoreRecord">
+        update t_core_record set
+             LOGISTICS = #{logistics},
+             LOGISTICS_NUM = #{logisticsNum},
+             STATUS = #{status}
+           where UUID = #{uuid}
+    </update>
+
+    <select id="selectOrderByUuid" resultType="com.joyveb.jkpmall.manage.bean.CoreRecord">
+        select * from t_core_record where uuid = #{uuid}
+    </select>
+
+
+
+</mapper>

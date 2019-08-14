@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joyveb.jkpmall.manage.mapper.CustomCashRecordMapper">
+
+
+    <select id="personalStatements" parameterType="map" resultType="map">
+        SELECT DATE_FORMAT(FROM_UNIXTIME(CASH_TIME /
+        1000),"%Y-%m-%d")
+        cashTime, sum(PRIZE_AMOUNT) prizeAmount
+        FROM T_CASH_RECORD
+        <where>
+            PRIZE_AMOUNT <![CDATA[ < ]]> 50000000
+            <if test="cashType != null">
+                AND CASH_TYPE = #{cashType}
+            </if>
+            <if test="startTime != null and startTime != ''">
+                AND CASH_TIME <![CDATA[ >= ]]> #{startTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                AND CASH_TIME <![CDATA[ <= ]]> #{endTime}
+            </if>
+            <if test="redeemStatus != null">
+                AND REDEEM_STATUS = #{redeemStatus}
+            </if>
+        </where>
+        GROUP BY cashTime
+        LIMIT #{skip}, #{limit}
+    </select>
+
+    <select id="countPersonalStatements" parameterType="map" resultType="int">
+        SELECT count(*) FROM (SELECT
+        DATE_FORMAT(FROM_UNIXTIME(CASH_TIME
+        / 1000),"%Y-%m-%d") cashTime
+        FROM T_CASH_RECORD
+        <where>
+            PRIZE_AMOUNT <![CDATA[ < ]]> 50000000
+            <if test="cashType != null">
+                AND CASH_TYPE = #{cashType}
+            </if>
+            <if test="startTime != null and startTime != ''">
+                AND CASH_TIME <![CDATA[ >= ]]> #{startTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                AND CASH_TIME <![CDATA[ <= ]]> #{endTime}
+            </if>
+            <if test="redeemStatus != null">
+                AND REDEEM_STATUS = #{redeemStatus}
+            </if>
+        </where>
+        GROUP BY cashTime
+        ) total
+    </select>
+
+    <select id="channelStatements" parameterType="map" resultType="map">
+        SELECT PRIZE_CHANNEL_NAME prizeChannelName, DATE_FORMAT(FROM_UNIXTIME(CASH_TIME /
+        1000),"%Y-%m-%d")
+        cashTime, SUM(PRIZE_AMOUNT) sumPrizeAmount, PROVINCE_ID provinceId FROM T_CASH_RECORD
+        <where>
+            <if test="cashType != null">
+                CASH_TYPE = #{cashType}
+            </if>
+            <if test="prizeChannelId != null and prizeChannelId != ''">
+                AND PRIZE_CHANNEL_ID LIKE CONCAT( '%', #{prizeChannelId}, '%')
+            </if>
+            <if test="prizeChannelName != null and prizeChannelName != ''">
+                AND PRIZE_CHANNEL_NAME LIKE CONCAT( '%', #{prizeChannelName}, '%')
+            </if>
+            <if test="provinceId != null">
+                AND PROVINCE_ID = #{provinceId}
+            </if>
+            <if test="startTime != null and startTime != ''">
+                AND CASH_TIME <![CDATA[ >= ]]> #{startTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                AND CASH_TIME <![CDATA[ <= ]]> #{endTime}
+            </if>
+            <if test="redeemStatus != null">
+                AND REDEEM_STATUS = #{redeemStatus}
+            </if>
+        </where>
+        GROUP BY SALE_CHANNEL_ID
+        ORDER BY CASH_TIME DESC
+        LIMIT #{skip}, #{limit}
+    </select>
+
+    <select id="countChannelStatements" parameterType="map" resultType="int">
+        SELECT count(*) FROM (SELECT PRIZE_CHANNEL_NAME prizeChannelName,
+        DATE_FORMAT(FROM_UNIXTIME(CASH_TIME / 1000),"%Y-%m-%d") cashTime, SUM(PRIZE_AMOUNT)
+        sumPrizeAmount, PROVINCE_ID provinceId FROM T_CASH_RECORD
+        <where>
+            <if test="cashType != null">
+                CASH_TYPE = #{cashType}
+            </if>
+            <if test="prizeChannelId != null and prizeChannelId != ''">
+                AND PRIZE_CHANNEL_ID LIKE CONCAT( '%', #{prizeChannelId}, '%')
+            </if>
+            <if test="prizeChannelName != null and prizeChannelName != ''">
+                AND PRIZE_CHANNEL_NAME LIKE CONCAT( '%', #{prizeChannelName}, '%')
+            </if>
+            <if test="provinceId != null">
+                AND PROVINCE_ID = #{provinceId}
+            </if>
+            <if test="startTime != null and startTime != ''">
+                AND CASH_TIME <![CDATA[ >= ]]> #{startTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                AND CASH_TIME <![CDATA[ <= ]]> #{endTime}
+            </if>
+            <if test="redeemStatus != null">
+                AND REDEEM_STATUS = #{redeemStatus}
+            </if>
+        </where>
+        GROUP BY SALE_CHANNEL_ID) total
+    </select>
+
+</mapper>

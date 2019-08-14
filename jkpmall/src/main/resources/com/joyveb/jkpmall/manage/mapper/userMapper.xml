@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joyveb.jkpmall.manage.mapper.CashRecordMapper">
+
+    <resultMap id="CashRecord" type="com.joyveb.jkpmall.manage.bean.UserEntity">
+        <id column="openId" property="openId"/>
+        <result column="prizeAmount" property="prizeAmount"/>
+        <result column="realName" property="realName"/>
+        <result column="telephone" property="telephone"/>
+        <result column="count" property="count"/>
+    </resultMap>
+
+    <resultMap id="finaStat" type="com.joyveb.jkpmall.manage.bean.FinaStat">
+        <result column="totalAmount" property="totalAmount"/>
+        <result column="date" property="date"/>
+    </resultMap>
+
+
+    <select id="jsonToCashRecord" resultMap="CashRecord" >
+        select a.REAL_NAME realName ,a.PHOE_NUM telephone,b.OPEN_ID openId,b.sum prizeAmount,b.count count
+        from t_user_info a ,
+        (select OPEN_ID,sum(prize_amount) sum,count(OPEN_ID) count from t_cash_record group by OPEN_ID)  b
+        where a.OPEN_ID=b.OPEN_ID;
+    </select>
+
+    <select id="finaStat" resultMap="finaStat" >
+        select from_unixtime(REDEEM_TIME/1000,'%Y-%m-%d') as date,count(*)
+        from `t_transfer_account_record`
+        where from_unixtime(REDEEM_TIME/1000,'%Y-%m-%d') between #{startTime}
+        and   #{endTime}
+        group by from_unixtime(REDEEM_TIME/1000,'%Y-%m-%d')
+        ORDER BY from_unixtime(REDEEM_TIME/1000,'%Y-%m-%d') DESC
+        ;
+    </select>
+
+
+
+</mapper>

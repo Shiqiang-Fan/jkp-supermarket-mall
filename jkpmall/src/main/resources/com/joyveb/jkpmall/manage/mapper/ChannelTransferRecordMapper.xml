@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joyveb.jkpmall.manage.mapper.ChannelTransferRecordMapper">
+    <resultMap id="transferRecordMap" type="com.joyveb.jkpmall.manage.bean.TransferRecordBean">
+        <result column="REDEEM_NUMBER" property="redeemNumber"/>
+        <result column="CASH_TYPE" property="cashType"/>
+        <result column="USER_NAME" property="userName"/>
+        <result column="TELEPHONE" property="telePhone"/>
+        <result column="OPEN_ID" property="openId"/>
+        <result column="REDEEM_TIME" property="redeemDate"/>
+        <result column="PRIZE_CHANNEL_ID" property="prizeChannelId"/>
+        <result column="PRIZE_CHANNEL_NAME" property="prizeChannelName"/>
+        <result column="PROVINCE_ID" property="provinceNum"/>
+        <result column="PRIZE_COUNT" property="prizeCount"/>
+        <result column="PRIZE_AMOUNT" property="prizeAmount"/>
+        <result column="REDEEM_STATUS" property="redeemStatus"/>
+        <result column="UPDATE_TIME" property="updateTime"/>
+        <result column="QUOTA" property="quota"/>
+    </resultMap>
+    <select id="getChannelTransferRecord" parameterType="map" resultMap="transferRecordMap">
+        SELECT t1.*,t2.USER_NAME,t2.TELEPHONE
+        FROM T_TRANSFER_ACCOUNT_RECORD t1 , T_CASH_RECORD t2
+        <where>
+            t1.REDEEM_NUMBER = t2.REDEEM_NUMBER
+            <if test="cashType != null">
+                AND t1.CASH_TYPE = #{cashType}
+            </if>
+            <if test="prizeChannelId != null">
+                AND t1.PRIZE_CHANNEL_ID = #{prizeChannelId}
+            </if>
+            <if test="prizeChannelName != null">
+                AND t1.PRIZE_CHANNEL_NAME = #{prizeChannelName}
+            </if>
+            <if test="startTime != null and startTime != ''">
+                AND CASH_TIME <![CDATA[ >= ]]> #{startTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                AND CASH_TIME <![CDATA[ <= ]]> #{endTime}
+            </if>
+            <if test="provinceNum != null">
+                AND t1.PROVINCE_NUM = #{provinceNum}
+            </if>
+            <if test="redeemStatus != null">
+                AND t1.REDEEM_STATUS = #{redeemStatus}
+            </if>
+        </where>
+        ORDER BY REDEEM_TIME DESC
+        LIMIT #{skip}, #{limit}
+    </select>
+    <select id="getCount" parameterType="map" resultType="int">
+        SELECT COUNT(*) FROM T_TRANSFER_ACCOUNT_RECORD t1 , T_CASH_RECORD t2
+        <where>
+            t1.REDEEM_NUMBER = t2.REDEEM_NUMBER
+            <if test="cashType != null">
+                AND t1.CASH_TYPE = #{cashType}
+            </if>
+            <if test="prizeChannelId != null">
+                AND t1.PRIZE_CHANNEL_ID = #{prizeChannelId}
+            </if>
+            <if test="prizeChannelName != null">
+                AND t1.PRIZE_CHANNEL_NAME = #{prizeChannelName}
+            </if>
+            <if test="startTime != null and startTime != ''">
+                AND CASH_TIME <![CDATA[ >= ]]> #{startTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                AND CASH_TIME <![CDATA[ <= ]]> #{endTime}
+            </if>
+            <if test="provinceNum != null">
+                AND t1.PROVINCE_NUM = #{provinceNum}
+            </if>
+            <if test="redeemStatus != null">
+                AND t1.REDEEM_STATUS = #{redeemStatus}
+            </if>
+        </where>
+    </select>
+</mapper>

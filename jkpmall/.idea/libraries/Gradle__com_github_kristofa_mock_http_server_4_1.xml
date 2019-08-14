@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.kristofa:mock-http-server:4.1">
+    <CLASSES>
+      <root url="jar://E:/gradle-4.6/caches/modules-2/files-2.1/com.github.kristofa/mock-http-server/4.1/9d5e62c5756c3aa7d8fec4cd9a2bac44f9bc9751/mock-http-server-4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://E:/gradle-4.6/caches/modules-2/files-2.1/com.github.kristofa/mock-http-server/4.1/e27c548b560b3413b7867b6a4240b589f9e7b381/mock-http-server-4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.yunpian.sdk:yunpian-java-sdk:1.2.7">
+    <CLASSES>
+      <root url="jar://E:/gradle-4.6/caches/modules-2/files-2.1/com.yunpian.sdk/yunpian-java-sdk/1.2.7/c64325c18b5ff3088e264dd35176eebd9854006a/yunpian-java-sdk-1.2.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://E:/gradle-4.6/caches/modules-2/files-2.1/com.yunpian.sdk/yunpian-java-sdk/1.2.7/d9f581be63788922c6c8b9b36c5cef35be51ef3b/yunpian-java-sdk-1.2.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

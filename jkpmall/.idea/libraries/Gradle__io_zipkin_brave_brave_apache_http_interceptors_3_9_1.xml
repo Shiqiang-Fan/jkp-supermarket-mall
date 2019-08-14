@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.zipkin.brave:brave-apache-http-interceptors:3.9.1">
+    <CLASSES>
+      <root url="jar://E:/gradle-4.6/caches/modules-2/files-2.1/io.zipkin.brave/brave-apache-http-interceptors/3.9.1/62ab21cfbab5b3177fbb35d96fa472463e342c3c/brave-apache-http-interceptors-3.9.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://E:/gradle-4.6/caches/modules-2/files-2.1/io.zipkin.brave/brave-apache-http-interceptors/3.9.1/741e87b796f0e65440ffe3aeca02902fd1feebd0/brave-apache-http-interceptors-3.9.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

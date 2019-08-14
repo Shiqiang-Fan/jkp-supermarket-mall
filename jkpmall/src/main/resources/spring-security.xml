@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<b:beans xmlns="http://www.springframework.org/schema/security"
+  xmlns:b="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd ">
+
+
+  <http use-expressions="true" entry-point-ref="restAuthenticationEntryPoint">
+
+    <intercept-url pattern="/manage/account/**" access="permitAll"/>
+    <intercept-url pattern="/manage/**" access="isAuthenticated()"/>
+    <intercept-url pattern="/**" access="permitAll"/>
+    <logout success-handler-ref="restLogoutSuccessHandler"/>
+
+    <custom-filter ref="captchaAuthenticaionFilter" position="FORM_LOGIN_FILTER"/>
+  </http>
+
+  <b:bean id="captchaAuthenticaionFilter"
+    class="com.joyveb.jkpmall.manage.auth.CaptchaAuthenticationFilter">
+    <b:property name="authenticationManager" ref="authenticationManager"/>
+    <b:property name="authenticationFailureHandler" ref="restAuthenticationFailureHandler"/>
+    <b:property name="authenticationSuccessHandler" ref="restAuthenticationSuccessHandler"/>
+  </b:bean>
+
+  <authentication-manager alias="authenticationManager">
+    <authentication-provider ref="joyvebUserDetailsAuthenticationProvide"/>
+  </authentication-manager>
+
+  <b:bean id="joyvebUserDetailsAuthenticationProvide"
+    class="com.joyveb.auth.security.JoyvebUserDetailsAuthenticationProvider">
+    <b:property name="userDetailsService" ref="joyvebUserDetailsService"/>
+  </b:bean>
+  <!--导入数据库的datasource-->
+  <b:bean id="joyvebUserDetailsService" class="com.joyveb.auth.security.JoyvebUserDetailsService">
+    <b:property name="dataSource" ref="dataSource"/>
+  </b:bean>
+
+</b:beans>
