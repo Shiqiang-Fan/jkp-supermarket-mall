@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地址管理</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link href="./css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/weixin/weui.css"/>
+    <link rel="stylesheet" href="static/weixin/weuix.css"/>
+    <script src="static/weixin/zepto.min.js"></script>
+    <style>
+        .placeholder {
+            margin-top: 10px;
+            padding: 0 5px;
+            width: 98%;
+            background-color: #FFFFFF;
+            line-height: 2.3em;
+            display:flex;
+            justify-content: space-between;
+            color: #000000;
+        }
+        .footer {
+            width: 100%;
+            height: 46px;
+            line-height: 46px;
+            bottom: 0;
+            position: fixed;
+            font-size: 45px;
+            /*padding-left: 10px;*/
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            align-items: center;
+        }
+        .footer i {
+            color: #fff;
+        }
+        .newsite{
+            /*margin-left: 40px;*/
+            margin-top:-30px;
+            border-radius: 55px;
+            background: red;
+            padding: 5px;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .newsite span{
+            font-size:18px;
+            color: #FFFFFF;
+        }
+        .newsite img {
+            width: 25px;
+            height: 25px;
+        }
+
+    </style>
+    <!--<script>-->
+        <!--$(function () {-->
+            <!--$("#button1").bind("click", function () {-->
+
+<!--//                    console.log( $("#button1").val() );-->
+
+                <!--if($("#btn").val()=="off"){-->
+                    <!--$("#btn").val("on");-->
+                    <!--console.log("开关1当前状态："+$("#btn"));-->
+                <!--}else{-->
+                    <!--$("#btn").val("off");-->
+                    <!--console.log("开关1当前状态："+$("#btn"));-->
+                <!--}-->
+
+            <!--});-->
+        <!--});-->
+    <!--</script>-->
+</head>
+
+<body style="background:#ebebeb">
+<form id="formId" class="ui form" action="" method="post">
+    <div class="placeholder">
+        <div class=" weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="name" placeholder="请填写姓名" type="name">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">手机号</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="telephone" placeholder="请输入手机号" type="tel">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">收货地址</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="address" placeholder="请填写地区" type="region">
+                </div>
+            </div>
+            <!--<div class="weui-cell">-->
+                <!--<div class="weui-cell__hd"><label class="weui-label">详细地址</label></div>-->
+                <!--<div class="weui-cell__bd">-->
+                    <!--<input class="weui-input" id="detailed" placeholder="请填写详细地区" type="address">-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="weui-cell">-->
+                <!--<div class="weui-cell__hd"><label class="weui-label">门牌号</label></div>-->
+                <!--<div class="weui-cell__bd">-->
+                    <!--<input class="weui-input" id="house" placeholder="请填写具体门牌号" type="house_number">-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="weui-cell">-->
+                <!--<div class="weui-cell__hd"><label class="weui-label">邮编</label></div>-->
+                <!--<div class="weui-cell__bd">-->
+                    <!--<input class="weui-input" placeholder="请填写邮政编码" type="postcode">-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <!--<div class="placeholder" style="margin-top: 15px;">-->
+        <!--<div style="font-size:20px;margin-top: 10px;">设置默认地址</div>-->
+        <!--<div class="weui-cell__ft" style="margin-top: 10px;">-->
+            <!--<input class="weui-switch" type="checkbox" id="button1" name="button1" />-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="footer" id="bottom">
+        <div class="newsite" >
+            <span id="save">保存</span>
+        </div>
+    </div>
+</form>
+</body>
+
+<script>
+    $("#save").click(function () {
+        let str = "";
+        str = "{\"openId\":\"wu\","+"\"userName\":\""+$("#name").val()+"\",\"telephone\":\""+$("#telephone").val()+"\",\"address\":\""+$("#address").val()+"\"}";
+        $.ajax({
+            url:'jkpsale/saveAddress',
+            data:str,
+            type:'POST',
+            dataType:'json',
+            contentType:'application/json; charset-UTF-8',
+            success:function(str){
+                console.log(str)
+                window.location.href = "./orderpage.html";
+            },
+            error:function (err){
+                // window.location.href = "./orderpage.html";
+            }
+        });
+
+        console.log(str);
+    })
+</script>
+</html>

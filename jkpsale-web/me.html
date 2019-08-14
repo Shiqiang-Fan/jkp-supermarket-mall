@@ -1,0 +1,177 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>我的</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link href="./css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/weixin/weui.css"/>
+    <link rel="stylesheet" href="static/weixin/weuix.css"/>
+
+    <script src="static/weixin/zepto.min.js"></script>
+    <script src="static/weixin/zepto.weui.js"></script>
+    <script>
+        window.onload = function(){
+
+            $.ajax({
+                url:'jkpsale/selectAddress',
+                data:{
+                    openId:"ouGOP4vvHcKERx5SZ25quaGaNMl8"
+                },
+                type:'GET',
+                success:function(str){
+                    let a = '';
+                    console.log("wwwwwwwwwwwwwwwwwwwwwwwwwww")
+                    console.log(str.retObj)
+                    if(str.retObj.userName == undefined){
+                        a = '<div class="placeholder2"><span>请添加发货地址</span></div>'
+                    }else {
+                        a = '<div><span>姓名：</span></span><span id="userName">' + str.retObj.userName +
+                            '</span></br><span>电话：</span><span id="telephone">' + str.retObj.telephone +
+                            '</span></br><span>地址：</span><span id="address">' + str.retObj.address +
+                            '</span></div>';
+                    }
+                    $(".placeholder").prepend(a);
+                },
+                error:function (err){
+                    alert("失败"+err);
+                }
+            });
+            $.ajax({
+                url:"/jkpsale/selectOrderRecord",
+                data:{
+                    openId:"ouGOP4vvHcKERx5SZ25quaGaNMl8"
+                },
+                type:'GET',
+                success:function(str){
+                    console.log(str)
+                    var ve = str.retObj
+                    for (var w in ve){
+                        if(ve[w].status == 0){
+                            ve[w].status = "未支付"
+                        }else{
+                            if(ve[w].status == 1){
+                                ve[w].status = "未发货"
+                            }else{
+                                ve[w].status = "已发货"
+                            }
+                        }
+                        ve[w].ord = ve[w].uuid.slice(0,8)+"..."
+                        console.log(ve[w])
+                        $("#details").append(
+                            "    <a class='placeholder1'id="+ve[w].uuid+"-"+ve[w].status +" onclick='a(this)'>\n" +
+                            "        <div>\n" +
+                            "            <img style=\"margin-top:10px;margin-bottom:10px;width: 80px;height: 100px\" src="+ve[w].picturePath+"></img>\n" +
+                            "        </div>\n" +
+                            "        <div style=\"display: flex;flex-direction: column;justify-content: space-between;margin-top: 15px;margin-bottom: 10px;margin-left: -10px\">\n" +
+                            "            <span >订单号：" +ve[w].ord+
+                            "            </span>\n" +
+                            "            <span style=\"color: red\">￥"+ve[w].amount+"\n" +
+                            "            </span>\n" +
+                            "        </div>\n" +
+                            "        <div style=\"margin-top: 90px;color: red\">"+ve[w].status+"</div>\n" +
+                            "    </a>"
+                        )
+                    }
+                },
+                error:function (err){}
+            })
+
+            // var value = JSON.parse(localStorage.getItem("item"));
+            // var value1 = 0
+            // $("#bottom").prepend("   <span id=\"bottom1\" style=\"font-size: 18px;\">应付金额：</span>\n" +
+            //     "    <span class=\"money\" style=\"color: #E64340;font-size: 18px;margin-left: -80px;\">￥"+value1+"</span>")
+            // console.log(value1)
+            // return value1
+        };
+        function a(a){
+            location.href="details.html?"+"="+$(a).attr("id");
+        }
+        $(function() {
+            $("#site").on('click', function() {
+                // console.log(JSON.stringify(app.goods[0].items))
+                // localStorage.setItem("item", JSON.stringify(app.goods[0].items));
+                self.location = "newsite.html";
+                // $('#my-actions').modal({});
+            })
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $("#button1").bind("click", function () {
+                alert("跳转微信支付");
+            });
+        });
+    </script>
+    <style>
+        .placeholder {
+            margin-top: 10px;
+            padding: 0 5px;
+            width: 98%;
+            background-color: #FFFFFF;
+            line-height: 2.3em;
+            display:flex;
+            /*justify-content: space-between;*/
+            color: #000000;
+        }
+        .placeholder2 {
+            margin-top: 7px;
+            padding: 0 5px;
+            width: 98%;
+            background-color: #FFFFFF;
+            line-height: 2.3em;
+            display:flex;
+            justify-content: space-between;
+            color: #000000;
+        }
+        .placeholder1 {
+            padding: 0 10px;
+            width: 95%;
+            background-color: #FFFFFF;
+            display:flex;
+            justify-content: space-between;
+            color: #000000;
+            margin-top: 1px;
+        }
+        .footer {
+            background-color: #FFFFFF;
+            width: 100%;
+            height: 46px;
+            line-height: 46px;
+            bottom: 0;
+            position: fixed;
+            font-size: 45px;
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        .footer i {
+            color: #fff;
+        }
+        .pay {
+            background-color: #FF1014;
+            color: #fff;
+            font-size: 18px;
+            padding: 0 20px;
+        }
+
+    </style>
+</head>
+
+<body  style="background:#ebebeb">
+<div class="flex1">
+    <div class="placeholder">
+        <img  id="site" style="margin-top:15px;margin-bottom:15px;width: 20px;height: 20px" src="static/default/jiantou.png"></img>
+    </div>
+</div>
+<div style="color: #c0c0c0;">我的订单</div>
+<div class="flex2" id="details">
+
+</div>
+
+</div>
+</body>
+</html>

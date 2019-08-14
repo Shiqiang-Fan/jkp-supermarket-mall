@@ -1,0 +1,49 @@
+/**
+ * 保存订单信息
+ {
+        "uuid": "34",
+        "gameCode": "1",
+        "saleNum": 21,
+        "telephone": "12",
+        "userName": "12",
+        "address": "12",
+        "logistics": "12",
+        "logisticsNum": "21"
+    }
+ * t_core_record
+ */
+void saveOrderInfo(OrderEntity orderEntity);
+
+/**
+
+ *  查询订单信息
+ *  t_core_record
+ * @return
+ */
+List<OrderEntity> selectOrder();
+
+
+
+/**
+ * 查询产品信息 {
+        "gameCode": "1",
+        "gameName": "1",
+        "paperNum": 1,
+        "prizeAmount": 1,
+        "picturePath": "1",
+        "storeNum": "11108"
+    }
+ * t_core_product
+ */
+List<Lottery>   selectLottery();
+
+/**|
+ * 修改库存
+ * t_core_product
+ * @param "GAME_CODE" 游戏编号
+ * @return
+ */
+Integer updateLottery(String gamecode);
+
+
+

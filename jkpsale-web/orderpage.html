@@ -1,0 +1,175 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>订单支付</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link href="./css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/weixin/weui.css"/>
+    <link rel="stylesheet" href="static/weixin/weuix.css"/>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script src="static/weixin/zepto.min.js"></script>
+    <script src="static/weixin/zepto.weui.js"></script>
+    <script>
+        wx.config({
+            debug: false,
+            appId: 'wx2ca072f959fb4cd8',
+            timestamp: '1558604775',
+            nonceStr: '035d09d4-7e72-48e5-8bb6-e2877db77501',
+            signature: '1f4c2147a06a9d53ae6285529be41ba3465c6a19',
+            jsApiList: [
+                'chooseWXPay',
+            ]
+        });
+        window.onload = function(){
+	    $.ajax({
+                url:'jkpsale/selectAddress',
+                data:{
+                    openId:"wu"
+                },
+                type:'GET',
+                success:function(str){
+                    let a = '';
+                    console.log("wwwwwwwwwwwwwwwwwwwwwwwwwww")
+                    console.log(str.retObj)
+                    if(str.retObj.userName == undefined){
+                        a = '<div class="placeholder2"><span>请添加发货地址</span></div>'
+                    }else {
+                        a = '<div><span>姓名：</span></span><span id="userName">' + str.retObj.userName +
+                            '</span></br><span>电话：</span><span id="telephone">' + str.retObj.telephone +
+                            '</span></br><span>地址：</span><span id="address">' + str.retObj.address +
+                            '</span></div>';
+                    }
+                    $(".placeholder").prepend(a);
+                },
+                error:function (err){
+                    alert("失败"+err);
+                }
+            });
+
+            var value = JSON.parse(localStorage.getItem("item"));
+            var value1 = 0
+            for (var i in value){
+                console.log(value[i].num)
+                if(value[i].num > 0){
+                    value1+=value[i].num*value[i].amount
+                    $("#details").append("    <a class='placeholder1'id="+value[i].title+">\n" +
+                        "        <div style=\"display: flex;flex-direction: row\">\n" +
+                        "            <img  style=\"margin-top:10px;margin-bottom:10px;width: 80px;height: 100px\" src="+value[i].img+"></img>\n" +
+                        "            <div style=\"display: flex;flex-direction: column;justify-content: space-between;margin-top: 10px;\n" +
+                        "                        margin-bottom: 10px;margin-left: 5px;\">\n" +
+                        "                <span >"+value[i].food+"</span></br>\n" +
+                        "                <span style=\"color: red\">￥"+value[i].amount+"</span>\n" +
+                        "            </div>\n" +
+                        "\n" +
+                        "        </div>\n" +
+                        "        <span>x"+value[i].num+"</span>\n" +
+                        "    </a>");
+                }
+
+            };
+            $("#bottom").prepend("   <span id=\"bottom1\" style=\"font-size: 18px;\">应付金额：</span>\n" +
+                "    <span class=\"money\" id=\"zongjine\" style=\"color: #E64340;font-size: 18px;margin-left: -80px;\">￥"+value1+"</span>")
+            console.log(value1)
+            return value1
+        };
+        $(function() {
+            $("#site").on('click', function() {
+                // console.log(JSON.stringify(app.goods[0].items))
+                // localStorage.setItem("item", JSON.stringify(app.goods[0].items));
+                self.location = "newsite.html";
+                // $('#my-actions').modal({});
+            })
+        });
+        $(function () {
+            $("#button1").bind("click", function () {
+                alert($("#zongjine").val());
+            });
+        });
+    </script>
+    <style>
+        .placeholder {
+            margin-top: 10px;
+            padding: 0 5px;
+            width: 98%;
+            background-color: #FFFFFF;
+            line-height: 2.3em;
+            display:flex;
+            justify-content: space-between;
+            color: #000000;
+        }
+        .placeholder2 {
+            margin-top: 7px;
+            padding: 0 5px;
+            width: 98%;
+            background-color: #FFFFFF;
+            line-height: 2.3em;
+            display:flex;
+            justify-content: space-between;
+            color: #000000;
+        }
+        .placeholder1 {
+            padding: 0 10px;
+            width: 95%;
+            background-color: #FFFFFF;
+            display:flex;
+            justify-content: space-between;
+            color: #000000;
+            margin-top: 1px;
+        }
+        .footer {
+            background-color: #FFFFFF;
+            width: 100%;
+            height: 46px;
+            line-height: 46px;
+            bottom: 0;
+            position: fixed;
+            font-size: 45px;
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        .footer i {
+            color: #fff;
+        }
+        .pay {
+            background-color: #FF1014;
+            color: #fff;
+            font-size: 18px;
+            padding: 0 20px;
+        }
+
+    </style>
+</head>
+
+<body  style="background:#ebebeb">
+<div class="flex1">
+        <div class="placeholder">
+            <img  id="site" style="margin-top:15px;margin-bottom:15px;width: 20px;height: 20px" src="static/default/jiantou.png"></img>
+        </div>
+</div>
+<div style="color: #c0c0c0;">我的订单</div>
+<div class="flex2" id="details">
+</div>
+<div class="footer" id="bottom">
+    <div class="pay" id="button1">提交订单
+    </div>
+</div>
+<!--<div id="half" class='weui-popup__container popup-bottom'>-->
+    <!--<div class="weui-popup__overlay"></div>-->
+    <!--<div class="weui-popup__modal">-->
+        <!--<div class="modal-content" id="security" style="display: flex;align-items: center; justify-content: center; flex-direction: column">-->
+            <!--<div style="font-size:24px;">验证码</div>-->
+            <!--<div style="font-size:18px;">验证码已发送到您的手机，请输入</div>-->
+            <!--<input id="verificationCode" style="height: 30px;" placeholder="验证码" type="number">-->
+            <!--<a href="javascript:;" class="weui-btn close-popup" style="margin-top: 50px;width: 100px">确认</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+</div>
+</body>
+</html>

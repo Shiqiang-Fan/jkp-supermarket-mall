@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <link href="./css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/weixin/weui.css"/>
+    <link rel="stylesheet" href="static/weixin/weuix.css"/>
+    <script src="static/weixin/zepto.min.js"></script>
+    <script src="static/weixin/zepto.weui.js"></script>
+    <script language="javascript" type="text/javascript">
+        window.onload = function() {
+            var loc = location.href;
+            var n1 = loc.length;
+            var n2 = loc.indexOf("=");
+            var id = decodeURI(loc.substr(n2 + 1, n1 - n2));
+            var arr=id.split("-");
+            console.log(arr[0])
+            $.ajax({
+                url: 'jkpsale/selectOrderDetail',
+                data: {
+                    uuid: arr[0]
+                },
+                type: 'GET',
+                success: function (str) {
+                    console.log(str.retObj)
+                    var value1 = 0
+                    for(var i in str.retObj){
+                        // value1+= value[i].saleNum*value[i].amount
+                        $("#details").append(
+                            "    <a class='placeholder1'id="+i+" >\n" +
+                            "        <div>\n" +
+                            "            <img style=\"margin-top:10px;margin-bottom:10px;width: 220px;height: 250px\" src="+str.retObj[i].picturePath+"></img>\n" +
+                            "        </div>\n" +
+                            "        <div style=\"display: flex;flex-direction: column;justify-content: space-between;margin-top: 15px;margin-bottom: 10px;margin-left: -10px\">\n" +
+                            "            <span >" +str.retObj[i].gameName+
+                            "            </span>\n" +
+                            "            <span style=\"color: red\">￥"+str.retObj[i].prizeAmount+"\n" +
+                            "            </span>\n" +
+                            "        </div>\n" +
+                            "        <div style=\"margin-top: 200px;color: red\">×"+str.retObj[i].saleNum+"</div>\n" +
+                            "    </a>"
+                        )
+                    }
+
+                },
+                error: function (err) {
+                }
+            })
+        }
+    </script>
+    <style>
+        .placeholder1 {
+            padding: 0 10px;
+            width: 100%;
+            background-color: #FFFFFF;
+            display:flex;
+            justify-content: space-between;
+            color: #000000;
+            margin-top: 1px;
+            font-size: 45px;
+        }
+        .footer i {
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body style="background:#ebebeb">
+
+<div class="flex2" id="details">
+
+</div>
+
+
+
+</body>
+</html>
