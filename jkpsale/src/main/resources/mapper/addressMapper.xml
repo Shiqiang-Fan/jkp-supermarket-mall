@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joyveb.redeem.dao.AddressMapper">
+
+    <resultMap id="orderAddress" type="com.joyveb.redeem.bean.AddressEntity">
+        <id column="OPEN_ID" property="openId"/>
+        <result column="TELEPHONE" property="telephone"/>
+        <result column="USER_NAME" property="userName"/>
+        <result column="ADDRESS" property="address"/>
+        <result column="STATUS" property="status"/>
+    </resultMap>
+
+    <select id="selectAddress" resultMap="orderAddress" >
+        SELECT * from t_user_address where OPEN_ID =#{openId}
+
+    </select>
+
+    <select id="selectAdd" resultMap="orderAddress" >
+        SELECT * from t_user_address
+        <where>
+            OPEN_ID =#{openId}
+            <if test="telephone != null">
+                AND TELEPHONE = #{telephone}
+            </if>
+            <if test="userName != null">
+                AND USER_NAME = #{userName}
+            </if>
+            <if test="address != null">
+                AND ADDRESS = #{address}
+            </if>
+        </where>
+    </select>
+
+    <insert id="saveAddress"   parameterType="com.joyveb.redeem.bean.AddressEntity">
+        insert into t_user_address(
+                    OPEN_ID,
+                    USER_NAME,
+                    TELEPHONE,
+                    ADDRESS)
+              values(
+                    #{openId},
+                    #{userName},
+                    #{telephone},
+                    #{address})
+    </insert>
+
+    <update id="updateAddress" parameterType="com.joyveb.redeem.bean.AddressEntity">
+        update t_user_address set
+                TELEPHONE = #{telephone},
+                USER_NAME = #{userName},
+                ADDRESS = #{address}
+        where OPEN_ID = #{openId}
+    </update>
+
+    <delete id="delelteAddress" parameterType="string">
+        delete from t_user_address
+                  where OPEN_ID = #{openId}
+    </delete>
+
+
+</mapper>

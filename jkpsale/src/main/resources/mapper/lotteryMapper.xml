@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joyveb.redeem.dao.LotteryMapper">
+    <resultMap id="OrderAndProductProd" type="com.joyveb.redeem.bean.OrderAndProductProd">
+        <id column="GAME_CODE" property="gameCode"/>
+        <result column="GAME_NAME" property="gameName"/>
+        <result column="PAPER_NUM" property="paperNum"/>
+        <result column="PRIZE_AMOUNT" property="prizeAmount"/>
+        <result column="PICTURE_PATH" property="picturePath"/>
+        <result column="STORE_NUM" property="storeNum"/>
+        <result column="DETAIL" property="detail"/>
+        <result column="PARAMETER" property="parameter"/>
+        <result column="SERVICE" property="service"/>
+        <result column="FACEVALUE" property="faceValue"/>
+
+    </resultMap>
+
+    <resultMap id="Order" type="com.joyveb.redeem.bean.OrderEntity">
+        <result column="UUID" property="uuid"/>
+        <result column="GAME_CODE" property="gameCode"/>
+        <result column="SALE_NUM" property="saleNum"/>
+        <result column="TELEPHONE" property="telephone"/>
+        <result column="USER_NAME" property="userName"/>
+        <result column="ADDRESS" property="address"/>
+        <result column="LOGISTICS" property="logistics"/>
+        <result column="LOGISTICS_NUM" property="logisticsNum"/>
+        <result column="OPENID" property="openId"/>
+        <result column="AMOUNT" property="amount"/>
+        <result column="GAME_NAME" property="gameName"/>
+    </resultMap>
+
+    <select id="selectProduct" resultMap="OrderAndProductProd">
+        SELECT * from t_core_product
+    </select>
+
+    <select id="selectProductByGameCode" resultMap="OrderAndProductProd">
+        SELECT * from t_core_product
+        <where>
+            1=1
+            <if test="_parameter != null">
+                AND GAME_CODE = #{_parameter}
+            </if>
+        </where>
+    </select>
+
+
+    <update id="updateLottery" parameterType="com.joyveb.redeem.bean.Lottery">
+          UPDATE t_core_product SET  STORE_NUM=STORE_NUM<![CDATA[-]]>#{saleNum}  where  GAME_CODE=#{gameCode} ;
+    </update>
+
+    <select id="selectByOpenId" resultMap="Order">
+          SELECT * from t_core_record where OPENID =#{openId} ORDER BY DATETIME DESC;
+    </select>
+
+    <select id="selectCoreRecordByUUID" resultMap="Order" resultType="com.joyveb.redeem.bean.OrderEntity">
+          SELECT * from t_core_record where UUID =#{uuid};
+    </select>
+
+</mapper>

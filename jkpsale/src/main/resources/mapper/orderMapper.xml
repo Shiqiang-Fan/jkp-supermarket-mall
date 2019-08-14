@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joyveb.redeem.dao.OrderMapper">
+    <resultMap id="orderEntity" type="com.joyveb.redeem.bean.OrderEntity">
+        <id column="UUID" property="uuid"/>
+        <result column="GAME_CODE" property="gameCode"/>
+        <result column="SALE_NUM" property="saleNum"/>
+        <result column="TELEPHONE" property="telephone"/>
+        <result column="USER_NAME" property="userName"/>
+        <result column="ADDRESS" property="address"/>
+        <result column="LOGISTICS" property="logistics"/>
+        <result column="LOGISTICS_NUM" property="logisticsNum"/>
+        <result column="OPENID" property="openId"/>
+        <result column="AMOUNT" property="amount"/>
+        <result column="STATUS" property="status"/>
+        <result column="DATETIME" property="dateTime"/>
+
+    </resultMap>
+
+    <insert id="saveOrderInfo"   parameterType="com.joyveb.redeem.bean.OrderEntity">
+          insert into t_core_record(
+                UUID,
+                GAME_CODE,
+                SALE_NUM,
+                TELEPHONE,
+                USER_NAME,
+                ADDRESS,
+                LOGISTICS,
+                LOGISTICS_NUM,
+                OPENID,
+                AMOUNT,
+                STATUS,
+                DATETIME
+              )   values(
+                #{uuid},
+                #{gameCode},
+                #{saleNum},
+                #{telephone},
+                #{userName},
+                #{address},
+                #{logistics},
+                #{logisticsNum},
+                #{openId},
+                #{amount},
+                #{status},
+                #{dateTime})
+    </insert>
+
+    <select id="selectOrder" resultMap="orderEntity" >
+          select * from t_core_record
+    </select>
+
+    <update id="updateOrderStatus" parameterType="string">
+        update t_core_record set STATUS = '1' where uuid = #{out_trade_no}
+    </update>
+
+    <select id="selectOrderByUuid" resultMap="orderEntity" >
+          select * from t_core_record
+          where UUID = #{uuid}
+    </select>
+
+</mapper>
