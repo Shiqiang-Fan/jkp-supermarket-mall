@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9fe377e9-ee95-4b33-aa11-7aac710dc43d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../jkpmall/src/main/java/com/joyveb/jkpmall/cache/ParaSysparameCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpmall/src/main/java/com/joyveb/jkpmall/cache/ParaSysparameCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/bean/BizOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/bean/BizOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/bean/CoreRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/bean/OrderEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/bean/OrderEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/controller/LotteryCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/controller/WeChatPayCtrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/controller/WeChatPayCtrl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/dao/OrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/dao/OrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/service/LotteryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/service/LotteryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/service/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/utils/WxPayUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/classes/com/joyveb/redeem/utils/WxPayUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/resources/mapper/orderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/resources/mapper/orderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/resources/pay.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/resources/pay.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/out/production/resources/wechat-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/out/production/resources/wechat-config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jkpsale/src/main/resources/mapper/orderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jkpsale/src/main/resources/mapper/orderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.dev.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.dev.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/artifacts/Gradle___com_joyveb___redeem_1_0_0_war__exploded_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__asm_asm_3_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__c3p0_c3p0_0_9_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__cglib_cglib_2_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__cglib_cglib_nodep_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_101tec_zkclient_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_8_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_8_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_github_kristofa_mock_http_server_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_google_code_gson_gson_2_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_jcraft_jsch_0_1_53.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_joyveb_auth_auth_manager_0_0_2_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_joyveb_common_common_utils_0_0_1_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_joyveb_logback_kafka_appender_0_0_3_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_joyveb_webrest_1_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_thetransactioncompany_cors_filter_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_thetransactioncompany_java_property_utils_1_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_unlto_twls_common_utils_1_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__com_yammer_metrics_metrics_core_2_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__commons_codec_commons_codec_1_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__commons_collections_commons_collections_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__commons_dbcp_commons_dbcp_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__commons_fileupload_commons_fileupload_1_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__commons_io_commons_io_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__commons_lang_commons_lang_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__commons_net_commons_net_3_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__commons_pool_commons_pool_1_5_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__dom4j_dom4j_1_6_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__io_netty_netty_3_7_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__io_zipkin_brave_brave_apache_http_interceptors_3_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__io_zipkin_brave_brave_core_3_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__io_zipkin_brave_brave_http_3_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__io_zipkin_java_zipkin_1_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__javax_servlet_javax_servlet_api_3_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__javax_servlet_jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__jline_jline_0_9_94.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__junit_junit_4_13_beta_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__log4j_log4j_1_2_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__mysql_mysql_connector_java_5_1_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__net_jpountz_lz4_lz4_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__net_logstash_logback_logstash_logback_encoder_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__net_sf_jopt_simple_jopt_simple_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_apache_httpcomponents_httpclient_4_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_apache_httpcomponents_httpcore_4_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_apache_ibatis_ibatis_sqlmap_2_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_apache_kafka_kafka_2_11_0_8_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_apache_kafka_kafka_clients_0_9_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_apache_poi_poi_3_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_apache_poi_poi_ooxml_3_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_apache_poi_poi_ooxml_schemas_3_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_apache_poi_poi_scratchpad_3_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_apache_xmlbeans_xmlbeans_2_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_apache_zookeeper_zookeeper_3_4_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_aspectj_aspectjrt_1_6_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_aspectj_aspectjweaver_1_6_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_json_json_20180130.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_mockito_mockito_all_1_10_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_mybatis_mybatis_3_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_mybatis_mybatis_spring_1_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_projectlombok_lombok_1_12_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_quartz_scheduler_quartz_2_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_quartz_scheduler_quartz_jobs_2_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_scala_lang_modules_scala_parser_combinators_2_11_1_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_scala_lang_modules_scala_xml_2_11_1_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_scala_lang_scala_library_2_11_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_simpleframework_simple_4_1_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_security_spring_security_config_3_2_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_security_spring_security_core_3_2_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_security_spring_security_web_3_2_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_spring_aop_3_2_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_spring_beans_3_2_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_spring_context_3_2_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_spring_context_support_3_2_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_spring_core_3_2_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_spring_expression_3_2_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_spring_jdbc_3_2_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_spring_oxm_3_2_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_spring_tx_3_2_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_spring_web_3_2_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_springframework_spring_webmvc_3_2_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__org_xerial_snappy_snappy_java_1_1_1_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__stax_stax_api_1_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/libraries/Gradle__xml_apis_xml_apis_1_0_b2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/modules/com.joyveb.redeem.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redeem/settings.gradle" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/config/env.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="268" />
+    <option name="y" value="23" />
+    <option name="width" value="1405" />
+    <option name="height" value="877" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="redeem-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redeem-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redeem-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redeem-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redeem-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redeem-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redeem-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redeem-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redeem-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redeem-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redeem-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redeem-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redeem-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redeem-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redeem-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redeem-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="record" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redeem-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redeem-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="userManage" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560154393605" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="E:\GitSubject\redeem-web\node_modules\eslint" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\GitSubject\redeem-web\src\config" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\樊世强\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9fe377e9-ee95-4b33-aa11-7aac710dc43d" name="Default Changelist" comment="" />
+      <created>1560135202857</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560135202857</updated>
+      <workItem from="1560135206944" duration="1425000" />
+    </task>
+    <task id="LOCAL-00001" summary="商城后台页面修改">
+      <created>1560154313624</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560154313624</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1425000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" weight="0.32885906" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="商城后台页面修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="商城后台页面修改" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/env.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/template/index.ejs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/userManage/recordManager.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/login/login.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.dev.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-493" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/libs/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/record/payment_day_settlement.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108" />
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
